@@ -3,6 +3,8 @@
 #include "2/2_2/soln2_2.h"
 #include "3/3_1/soln3_1.h"
 #include "3/3_2/soln3_2.h"
+#include "4/4_1/soln4_1.h"
+#include "4/4_2/soln4_2.h"
 
 std::ifstream checked(std::ifstream&& in)
 {
@@ -13,5 +15,5 @@ std::ifstream checked(std::ifstream&& in)
 
 int main()
 {
-    std::cout << SOLN(3_2) << std::endl;
+    std::cout << SOLN(4_2) << std::endl;
 }
