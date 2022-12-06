@@ -4,6 +4,6 @@ project(aoc2022)
 set(CMAKE_CXX_STANDARD 20)
 
 file(GLOB GLOB_RECURSE SOURCES *.h)
-add_executable(aoc2022 main.cpp ${SOURCES} 4/4_2/soln4_2.h)
+add_executable(aoc2022 main.cpp ${SOURCES} 5/5_1/soln5_1.h)
 file(GLOB_RECURSE TXT_INS "*.txt")
 file(COPY ${TXT_INS} DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
