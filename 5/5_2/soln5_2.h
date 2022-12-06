@@ -3,13 +3,10 @@
 #include <fstream>
 #include <iomanip>
 #include <deque>
+#include <vector>
+#include <unordered_set>
 
-namespace soln51
-{
-    using namespace std;
-}
-
-std::string soln5_1(std::ifstream&& in)
+std::string soln5_2(std::ifstream&& in)
 {
     static const std::unordered_set<char> special_chars = {'[', ']', ' ', '\r'};
     std::string str;
@@ -65,11 +62,15 @@ std::string soln5_1(std::ifstream&& in)
     }
     for (const auto& command : commands)
     {
+        std::deque<char> tomove;
         for (int i = 0; i < command[0]; i++)
         {
-            auto elem = stacks[command[1] - 1].front();
+            tomove.push_back(stacks[command[1] - 1].front());
             stacks[command[1] - 1].pop_front();
-            stacks[command[2] - 1].push_back(elem);
+        }
+        for (auto rit = tomove.rbegin(); rit != tomove.rend(); rit++)
+        {
+            stacks[command[2] - 1].push_front(*rit);
         }
     }
     std::string out;
